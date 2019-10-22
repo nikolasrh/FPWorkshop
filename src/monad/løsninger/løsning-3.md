@@ -1,5 +1,5 @@
 ```kotlin
-fun <a, b> map(rx: Result<a>, f: ((a) -> b)): Result<b> = bind(rx) { x -> rtrn(f(x)) }
+fun <a, b> map(f: ((a) -> b), rx: Result<a>): Result<b> = bind(rx, compose(::rtrn, f))
 
 fun <a, b> apply(rf: Result<((a)->b)>, rx: Result<a>) : Result<b> = bind(rf) { f -> map(rx, f) }
 ```

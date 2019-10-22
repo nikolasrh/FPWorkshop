@@ -1,4 +1,4 @@
-Implementer `bind`, `flatten` og `kleisliCompose` i MonadResult.
+Implementer `bind`, `kleisliCompose` og `flatten` i MonadResult.
 
 Kjør MonadLaws uten feil.
 

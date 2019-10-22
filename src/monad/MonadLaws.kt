@@ -3,7 +3,6 @@ package monad
 import kotlin.test.assertEquals
 import kotlin.test.fail
 
-
 /*
     https://wiki.haskell.org/Monad_laws
 
