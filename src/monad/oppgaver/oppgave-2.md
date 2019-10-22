@@ -1,0 +1,1 @@
+Endre implementasjonen av `flatten` til å bruke `bind` og en annen funksjon.

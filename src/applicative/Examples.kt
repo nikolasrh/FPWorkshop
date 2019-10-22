@@ -1,0 +1,5 @@
+package applicative
+
+fun main() {
+
+}
