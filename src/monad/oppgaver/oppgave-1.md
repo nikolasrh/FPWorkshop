@@ -1,5 +1,7 @@
-Implementer `bind`, `kleisliCompose` og `flatten` i MonadResult.
+Prøv å kalle `map` med `safeDiv`. Hva er problemet?
 
-Kjør MonadLaws uten feil.
+Implementer `flatten` og løs problemet som oppstod over.
 
-Lag noen fete eksempler!
+Etterpå implementerer du `bind` ved å bruke `map` og `flatten`.
+
+Ser du hvorfor et annet navn for `bind` er `flatMap`?

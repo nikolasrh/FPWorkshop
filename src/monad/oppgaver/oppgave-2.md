@@ -1,1 +1,7 @@
-Endre implementasjonen av `flatten` til å bruke `bind` og en annen funksjon.
+Fjern implementasjonen av `bind`.
+
+Implementer `bind` og `kleisliCompose` i MonadResult.
+
+Kjør MonadLaws uten feil.
+
+Lag noen fete eksempler!
