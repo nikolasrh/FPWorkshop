@@ -1,8 +1,8 @@
 package functor
 
-interface Result<T>
-class Ok<T>(val value: T) : Result<T>
-class Error<T>(val error: String) : Result<T>
+sealed class Result<T>
+class Ok<T>(val value: T) : Result<T>()
+class Error<T>(val error: String) : Result<T>()
 
 fun <T> id(x: T): T = throw NotImplementedError()
 

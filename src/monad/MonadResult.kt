@@ -1,8 +1,8 @@
 package monad
 
-interface Result<T>
-class Ok<T>(val value: T) : Result<T>
-class Error<T>(val error: String) : Result<T>
+sealed class Result<T>
+class Ok<T>(val value: T) : Result<T>()
+class Error<T>(val error: String) : Result<T>()
 
 fun <T> id(x: T): T = x
 
@@ -37,7 +37,6 @@ infix fun <a, b> Result<((a)->b)>.`‹*›`(rx: Result<a>) : Result<b> = apply(t
 fun <a, b> map(f: ((a) -> b), rx: Result<a>): Result<b> = when (rx) {
     is Ok -> Ok(f(rx.value))
     is Error -> Error(rx.error)
-    else -> Error("") // Not reachable
 }
 
 infix fun <a, b> ((a) -> b).`‹!›`(rx: Result<a>): Result<b> = map(this, rx)
