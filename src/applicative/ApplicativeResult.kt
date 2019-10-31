@@ -1,8 +1,8 @@
 package applicative
 
-interface Result<T>
-class Ok<T>(val value: T) : Result<T>
-class Error<T>(val error: String) : Result<T>
+sealed class Result<T>
+class Ok<T>(val value: T) : Result<T>()
+class Error<T>(val error: String) : Result<T>()
 
 fun <a> id(x: a): a = x
 
@@ -11,7 +11,6 @@ fun <a> rtrn(x: a): Result<a> = Ok(x)
 fun <a, b> map(f: ((a) -> b), rx: Result<a>): Result<b> = when (rx) {
     is Ok -> Ok(f(rx.value))
     is Error -> Error(rx.error)
-    else -> Error("") // Not reachable
 }
 
 fun <a, b, c> map2(f: ((a) -> (b) -> c), ra: Result<a>, rb: Result<b>): Result<c> =
